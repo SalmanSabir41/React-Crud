@@ -1,6 +1,7 @@
 import './App.css';
 import { CrudData } from './CrudData';
 import { useEffect, useState } from 'react';
+      
 
 function App() {
 
@@ -39,7 +40,7 @@ function App() {
    e.preventDefault();
    const dt = [...data];
    const newObject = {
-    id: CrudData.length + 1,
+    id: dt.length + 1,
     firstName: firstName,
     lastName: lastName,
     age: age
@@ -78,12 +79,14 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ display: 'flex', justifyContent: 'center', padding:"10px", marginBottom:"10px", backgroundColor:"black", color:"white", alignItems:"center"  }}>
+      <div className='row'>
+      
         <div>
           <label>First Name:
             <input type='text' placeholder='First Name' onChange={(e)=> setFirstName(e.target.value)} value={firstName} />
           </label>
         </div>
+
         <div>
           <label>Last Name:
             <input type='text' placeholder='Last Name' onChange={(e)=> setLastName(e.target.value)} value={lastName}/>
@@ -109,8 +112,8 @@ function App() {
         
           <tr>
             <td>Id</td>
-            <td>firstName</td>
-            <td>LastName</td>
+            <td>First Name</td>
+            <td>Last Name</td>
             <td>Age</td>
             <td>Action</td>
           </tr>
